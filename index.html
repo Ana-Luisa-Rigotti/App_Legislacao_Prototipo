@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal da Legislação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <!-- LOGIN -->
+    <section class="screen login-screen active" data-screen="login">
+      <header class="topbar topbar-login">
+        <div class="brand">
+          <span class="brand-icon">⚖</span>
+          <div>
+            <span>Portal da</span>
+            <strong>Legislação</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="login-page-bg"></div>
+
+      <form class="login-card" id="loginForm">
+        <div class="justice-logo">
+          <span>⚖</span>
+        </div>
+
+        <label for="nomeLogin">Nome</label>
+        <input id="nomeLogin" type="text" placeholder="Seu nome completo" autocomplete="name" />
+
+        <label for="cpfLogin">CPF</label>
+        <input id="cpfLogin" type="text" placeholder="000.000.000-00" maxlength="14" />
+
+        <button type="submit" class="btn btn-primary full">Entrar <span>↪</span></button>
+        <button type="button" class="link-button" data-go="login">Não possui cadastro? clique aqui</button>
+      </form>
+    </section>
+
+    <!-- HOME / DESTAQUES -->
+    <section class="screen app-screen" data-screen="home">
+      <header class="topbar">
+        <div class="brand small">
+          <span class="brand-icon">⚖</span>
+          <strong>Portal da Legislação</strong>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" type="button" data-toast="Botão pesquisa">⌕</button>
+          <button class="icon-btn" type="button" data-toast="Menu do protótipo.">☰</button>
+        </div>
+      </header>
+
+      <div class="content with-nav">
+        <button class="back-mini" type="button" data-go="resenha">‹</button>
+
+        <section class="hero-search">
+          <h1>Encontre leis e decretos com facilidade</h1>
+          <div class="search-row">
+            <input type="search" placeholder="Ex: Reforma Tributária, Código Civil..." />
+            <button type="button" data-go="pesquisa">Buscar</button>
+          </div>
+        </section>
+
+        <div class="section-heading compact">
+          <div>
+            <span class="eyebrow">ATUALIZAÇÃO DIÁRIA</span>
+            <h2>Destaques do Dia</h2>
+          </div>
+          <button type="button" data-go="pesquisa">Ver todos ›</button>
+        </div>
+
+        <article class="featured-card clickable" data-go="detalhe">
+          <div class="row-between top-line">
+            <span class="tag warning">EM VOTAÇÃO NO SENADO</span>
+            <small>PL 1234/2024</small>
+          </div>
+          <h3>Marco Legal da Inteligência Artificial</h3>
+          <p>Estabelece princípios, regras e diretrizes para o desenvolvimento e aplicação da IA no Brasil, focando em ética e…</p>
+          <div class="card-footer">
+            <div class="mini-avatars"><span>IA</span><span>TC</span></div>
+            <button type="button" data-go="detalhe">Detalhes da Pauta</button>
+          </div>
+        </article>
+
+        <article class="simple-card clickable" data-go="detalhe">
+          <span class="tag success">APROVADO</span>
+          <h3>Nova Lei Ambiental</h3>
+          <p>Atualizações críticas sobre a preservação de biomas costeiros.</p>
+          <small>Ontem, 18:45</small>
+        </article>
+
+        <article class="simple-card clickable" data-go="detalhe">
+          <span class="tag muted">ARQUIVADO</span>
+          <h3>Reforma do Judiciário</h3>
+          <p>A proposta não obteve quórum suficiente para tramitação.</p>
+          <small>Comissão de Justiça</small>
+        </article>
+
+        <div class="section-heading">
+          <h2>Meus Alertas</h2>
+        </div>
+
+        <div class="alert-grid">
+          <button class="alert-tile dark" type="button" data-go="alertas">
+            <span>🎓</span>
+            <strong>Educação</strong>
+            <small>3 novas pautas</small>
+          </button>
+          <button class="alert-tile dark" type="button" data-go="alertas">
+            <span>💳</span>
+            <strong>Impostos</strong>
+            <small>1 nova pauta</small>
+          </button>
+          <button class="alert-tile" type="button" data-go="alertas">
+            <span>🛡</span>
+            <strong>Saúde</strong>
+            <small>Sem novidades hoje</small>
+          </button>
+          <button class="alert-tile dashed" type="button" data-go="alertas">
+            <span>＋</span>
+            <strong>Novo Tema</strong>
+          </button>
+        </div>
+
+        <section class="parliament-card">
+          <div>
+            <h2>Sua voz no Parlamento</h2>
+            <p>Acompanhe em tempo real o que está sendo decidido agora.</p>
+          </div>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegação principal">
+        <button type="button" data-go="home"><span>⌂</span>Home</button>
+        <button type="button" data-go="pesquisa"><span>⌕</span>Pesquisa</button>
+        <button type="button" data-go="alertas"><span>▣</span>Meus Temas</button>
+        <button type="button" data-go="perfil"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+
+    <!-- RESENHA DIÁRIA -->
+    <section class="screen app-screen" data-screen="resenha">
+      <header class="topbar">
+        <div class="brand small">
+          <span class="brand-icon">⚖</span>
+          <strong>Portal da Legislação</strong>
+        </div>
+         <div class="top-actions">
+          <button class="icon-btn" type="button" data-toast="Botão pesquisa">⌕</button>
+          <button class="icon-btn" type="button" data-toast="Menu do protótipo.">☰</button>
+        </div>
+      </header>
+
+      <div class="content with-nav">
+        <div class="section-heading stacked">
+          <h1>Resenha Diária</h1>
+          <p>Acompanhe as publicações legislativas diárias.</p>
+        </div>
+
+        <label class="field-label" for="exercicio">Exercício</label>
+        <select id="exercicio" class="select-field">
+          <option>2026</option>
+          <option>2025</option>
+          <option>2024</option>
+        </select>
+
+        <section class="calendar-card">
+          <div class="calendar-title">
+            <button type="button">‹</button>
+            <h2>Maio 2026</h2>
+            <button type="button">›</button>
+          </div>
+          <div class="calendar-grid weekdays">
+            <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+          </div>
+          <div class="calendar-grid days">
+            <span></span><span></span><span></span><span></span><span></span><span>1</span><span>2</span>
+            <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+            <span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span>
+            <span>17</span><span>18</span><span>19</span><button type="button" class="selected-day">20</button><span>21</span><span>22</span><span>23</span>
+            <span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+          </div>
+          <div class="month-summary">
+            <strong>ⓘ Resumo do Mês</strong>
+            <p>14 Leis publicadas, 8 Decretos e 22 Portarias até o momento.</p>
+          </div>
+        </section>
+
+        <div class="section-heading compact row-title">
+          <h2>Publicações de 20 de Maio</h2>
+          <span>3 resultados encontrados</span>
+        </div>
+
+        <article class="publication-card clickable" data-go="detalhe">
+          <div class="row-between"><span class="tag success">APROVADO</span><small>Publicado às 09:15</small></div>
+          <h3>Lei Complementar nº 142/2026</h3>
+          <p>Institui o Plano Municipal de Saneamento Básico e estabelece as diretrizes para a…</p>
+          <div class="actions-line"><button type="button">↧ PDF</button><button type="button">↗ Compartilhar</button></div>
+        </article>
+
+        <article class="publication-card clickable" data-go="detalhe">
+          <div class="row-between"><span class="tag warning">EM VOTAÇÃO</span><small>Publicado às 11:30</small></div>
+          <h3>Projeto de Decreto nº 45/2026</h3>
+          <p>Dispõe sobre a regulamentação do uso de espaços públicos para eventos…</p>
+          <div class="actions-line"><button type="button">↧ PDF</button><button type="button">↗ Compartilhar</button></div>
+        </article>
+
+        <article class="publication-card clickable" data-go="detalhe">
+          <div class="row-between"><span class="tag muted">ARQUIVADO</span><small>Publicado às 14:45</small></div>
+          <h3>Indicação nº 212/2026</h3>
+          <p>Solicita a manutenção da iluminação pública e poda de árvores na Avenida…</p>
+          <div class="actions-line"><button type="button">↧ PDF</button><button type="button">↗ Compartilhar</button></div>
+        </article>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegação principal">
+        <button type="button" data-go="home"><span>⌂</span>Home</button>
+        <button type="button" data-go="pesquisa"><span>⌕</span>Pesquisa</button>
+        <button type="button" data-go="alertas"><span>▣</span>Meus Temas</button>
+        <button type="button" data-go="perfil"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+
+    <!-- PESQUISA AVANÇADA -->
+    <section class="screen app-screen" data-screen="pesquisa">
+      <header class="topbar">
+        <div class="brand small">
+          <span class="brand-icon">⚖</span>
+          <strong>Portal da Legislação</strong>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" type="button" data-toast="Botão pesquisa">⌕</button>
+          <button class="icon-btn" type="button" data-toast="Menu do protótipo.">☰</button>
+        </div>
+      </header>
+
+      <div class="content with-nav">
+        <button class="back-mini" type="button" data-back>‹</button>
+
+        <div class="section-heading stacked">
+          <h1>Pesquisa Avançada</h1>
+          <p>Utilize os filtros abaixo para localizar atos normativos de forma precisa.</p>
+        </div>
+
+        <section class="filter-card">
+          <label>Busca por termos ou palavras-chave</label>
+          <div class="input-with-icon">
+            <span>⌕</span>
+            <input type="search" placeholder="Ex: 'Meio Ambiente', 'Reforma Tributária'..." />
+          </div>
+
+          <label>Número da Lei</label>
+          <input type="text" placeholder="00.000" />
+
+          <label>Ano</label>
+          <input type="text" placeholder="AAAA" />
+
+          <label>Tipo de Ato</label>
+          <select>
+            <option>Todos os tipos</option>
+            <option>Lei Ordinária</option>
+            <option>Decreto</option>
+            <option>Projeto de Lei</option>
+          </select>
+
+          <div class="filter-actions">
+            <button type="reset" class="btn-clean">Limpar Filtros</button>
+            <button type="button" class="btn btn-primary" data-toast="Resultados atualizados.">⌕ Pesquisar</button>
+          </div>
+        </section>
+
+        <div class="results-heading">
+          <h2>Resultados <span>(24)</span></h2>
+          <label>Ordenar por: <select><option>Mais recentes</option><option>Mais antigas</option></select></label>
+        </div>
+
+        <article class="result-card clickable" data-go="detalhe">
+          <div class="result-top"><span class="pill dark-blue">LEI ORDINÁRIA</span><small>Nº 14.133/2021</small></div>
+          <h3>Lei de Licitações e Contratos Administrativos</h3>
+          <p>Estabelece normas gerais de licitação e contratação para as Administrações…</p>
+          <div class="row-between"><span class="tag success">APROVADO</span><button type="button" data-go="detalhe">▣ Ver Íntegra</button></div>
+        </article>
+
+        <article class="result-card clickable" data-go="detalhe">
+          <div class="result-top"><span class="pill dark-blue">DECRETO</span><small>Nº 11.460/2023</small></div>
+          <h3>Plano de Ação Climática Federal</h3>
+          <p>Dispõe sobre a estrutura de governança e as metas intersetoriais para a redução…</p>
+          <div class="row-between"><span class="tag warning">EM VOTAÇÃO</span><button type="button" data-go="detalhe">▣ Ver Íntegra</button></div>
+        </article>
+
+        <article class="result-card clickable" data-go="detalhe">
+          <div class="result-top"><span class="pill dark-blue">PROJETO DE LEI</span><small>Nº 4.250/2022</small></div>
+          <h3>Reforma da Educação Profissional</h3>
+          <p>Altera a Lei de Diretrizes e Bases da Educação Nacional para ampliar a oferta…</p>
+          <div class="row-between"><span class="tag muted">ARQUIVADO</span><button type="button" data-go="detalhe">▣ Ver Íntegra</button></div>
+        </article>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegação principal">
+        <button type="button" data-go="home"><span>⌂</span>Home</button>
+        <button type="button" data-go="pesquisa"><span>⌕</span>Pesquisa</button>
+        <button type="button" data-go="alertas"><span>▣</span>Meus Temas</button>
+        <button type="button" data-go="perfil"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+
+    <!-- DETALHE DA LEI -->
+    <section class="screen app-screen" data-screen="detalhe">
+      <header class="topbar">
+        <div class="brand small">
+          <span class="brand-icon">⚖</span>
+          <strong>Portal da Legislação</strong>
+        </div>
+         <div class="top-actions">
+          <button class="icon-btn" type="button" data-toast="Botão pesquisa">⌕</button>
+          <button class="icon-btn" type="button" data-toast="Menu do protótipo.">☰</button>
+        </div>
+      </header>
+
+      <div class="content with-nav detail-content">
+        <button class="back-mini" type="button" data-back>‹</button>
+
+        <section class="law-hero">
+          <span class="tag success">EM VOTAÇÃO</span>
+          <h1>PL 4330/2023</h1>
+          <p>Dispõe sobre a regulamentação do teletrabalho em órgãos públicos federais.</p>
+        </section>
+
+        <section class="detail-card">
+          <h2>Resumo da Proposta</h2>
+          <p>Este projeto de lei visa estabelecer diretrizes claras para a modalidade de teletrabalho no serviço público federal, garantindo a produtividade e o bem-estar dos servidores, além de prever mecanismos de controle de jornada e economia de recursos públicos com infraestrutura física.</p>
+          <div class="meta-grid">
+            <div><small>AUTOR</small><strong>Dep. Federal Carlos Mendes</strong></div>
+            <div><small>DATA DE PROTOCOLO</small><strong>15 de Outubro de 2023</strong></div>
+            <div><small>URGÊNCIA</small><strong class="red">Sim</strong></div>
+          </div>
+        </section>
+
+        <div class="detail-buttons">
+          <button class="btn btn-primary full" type="button" data-go="alertas">⚙ Acompanhar esta Lei</button>
+          <button class="btn btn-outline full" type="button" data-toast="No protótipo, este botão simula a abertura do PDF.">▣ Texto Integral (PDF)</button>
+        </div>
+
+        <section class="timeline-card">
+          <div class="section-heading compact">
+            <h2>Histórico de Trâmite</h2>
+            <span>5 etapas concluídas</span>
+          </div>
+
+          <ol class="timeline">
+            <li class="current"><strong>Plenário</strong><p>Aguardando inclusão na Ordem do Dia para votação.</p><small>22 Mai 2024</small></li>
+            <li><strong>Comissão de Constituição e Justiça</strong><p>Parecer favorável aprovado por unanimidade.</p><small>10 Abr 2024</small></li>
+            <li><strong>Comissão de Trabalho</strong><p>Relator apresentou substitutivo acolhido.</p><small>05 Mar 2024</small></li>
+            <li><strong>Apresentação na Câmara</strong><p>Projeto protocolado e lido em plenário.</p><small>15 Out 2023</small></li>
+          </ol>
+          <button type="button" class="more-link" data-toast="Histórico completo aberto no protótipo.">Ver histórico completo⌄</button>
+        </section>
+
+        <section>
+          <h2 class="block-title">Documentos Relacionados</h2>
+          <article class="doc-card"><span>▣</span><div><h3>Nota Técnica 12/2024</h3><p>Análise de impacto financeiro realizada pela consultoria legislativa.</p></div></article>
+          <article class="doc-card"><span>▣</span><div><h3>Relatório de Audiência</h3><p>Síntese das discussões com sindicatos e gestores públicos.</p></div></article>
+          <article class="doc-card"><span>▣</span><div><h3>Emendas Parlamentares</h3><p>Consolidado de todas as 15 emendas propostas ao texto original.</p></div></article>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegação principal">
+        <button type="button" data-go="home"><span>⌂</span>Home</button>
+        <button type="button" data-go="pesquisa"><span>⌕</span>Pesquisa</button>
+        <button type="button" data-go="alertas"><span>▣</span>Meus Temas</button>
+        <button type="button" data-go="perfil"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+
+    <!-- ALERTAS INTELIGENTES -->
+    <section class="screen app-screen" data-screen="alertas">
+      <header class="topbar">
+        <div class="brand small">
+          <span class="brand-icon">⚖</span>
+          <strong>Portal da Legislação</strong>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" type="button" data-toast="Botão pesquisa">⌕</button>
+          <button class="icon-btn" type="button" data-toast="Menu do protótipo.">☰</button>
+        </div>
+      </header>
+
+      <div class="content with-nav">
+        <button class="back-mini" type="button" data-back>‹</button>
+
+        <div class="section-heading stacked">
+          <h1>Alertas Inteligentes</h1>
+          <p>Configure como você deseja ser notificado sobre novas atualizações legislativas em seus temas de interesse.</p>
+        </div>
+
+        <span class="eyebrow spaced">CATEGORIAS SUGERIDAS</span>
+
+        <section class="category-card">
+          <div class="category-icon blue">🎓</div>
+          <div><h3>Educação</h3><p>Diretrizes, BNCC, financiamento e ensino superior.</p></div>
+          <label class="switch"><input type="checkbox" /><span></span></label>
+        </section>
+
+        <section class="category-card selected">
+          <div class="category-icon green">🛡</div>
+          <div><h3>Saúde</h3><p>Regulamentação SUS, vigilância sanitária e planos.</p></div>
+          <label class="switch"><input type="checkbox" checked /><span></span></label>
+        </section>
+
+        <section class="category-card">
+          <div class="category-icon blue">🚘</div>
+          <div><h3>Trânsito</h3><p>Código de Trânsito Brasileiro e mobilidade urbana.</p></div>
+          <label class="switch"><input type="checkbox" /><span></span></label>
+        </section>
+
+        <section class="category-card selected">
+          <div class="category-icon red">💳</div>
+          <div><h3>Impostos</h3><p>Reforma tributária, alíquotas e benefícios fiscais.</p></div>
+          <label class="switch"><input type="checkbox" checked /><span></span></label>
+        </section>
+
+        <section class="keyword-card">
+          <h2>Palavras-chave personalizadas</h2>
+          <p>Seja notificado sempre que uma lei contiver termos específicos de seu interesse profissional ou pessoal.</p>
+          <div class="keyword-row">
+            <input id="keywordInput" type="text" placeholder="Ex: 'Inteligência Artificial', 'Licitação'..." />
+            <button type="button" id="addKeyword">+ Adicionar</button>
+          </div>
+          <div class="chips" id="chips">
+            <span>Meio Ambiente <button type="button">×</button></span>
+            <span>Startups <button type="button">×</button></span>
+          </div>
+        </section>
+
+        <section class="status-card">
+          <span class="eyebrow">STATUS DOS ALERTAS</span>
+          <div><span>Categorias Ativas</span><strong>2</strong></div>
+          <div><span>Keywords</span><strong id="keywordCount">2</strong></div>
+          <div><span>Frequência</span><strong class="badge">EM TEMPO REAL</strong></div>
+          <button class="btn btn-save full" type="button" data-toast="Configurações salvas com sucesso.">Salvar Configurações</button>
+        </section>
+
+        <section class="tip-card">
+          <h3>💡 Dica de Especialista</h3>
+          <p>Combine categorias amplas com palavras-chave específicas para reduzir o ruído e receber apenas o que importa.</p>
+        </section>
+
+        <section class="impact-card">
+          <p>Acompanhe a evolução das leis que impactam sua vida.</p>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegação principal">
+        <button type="button" data-go="home"><span>⌂</span>Home</button>
+        <button type="button" data-go="pesquisa"><span>⌕</span>Pesquisa</button>
+        <button type="button" data-go="alertas"><span>▣</span>Meus Temas</button>
+        <button type="button" data-go="perfil"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+
+    <!-- PERFIL / PLACEHOLDER -->
+    <section class="screen app-screen" data-screen="perfil">
+      <header class="topbar">
+        <div class="brand small">
+          <span class="brand-icon">⚖</span>
+          <strong>Portal da Legislação</strong>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" type="button" data-toast="Botão pesquisa">⌕</button>
+          <button class="icon-btn" type="button" data-toast="Menu do protótipo.">☰</button>
+        </div>
+      </header>
+
+      <div class="content with-nav center-content">
+        <div class="profile-card">
+          <div class="avatar">A</div>
+          <h1>Perfil</h1>
+          <p>Esta tela não apareceu no fluxo colorido, então deixei como placeholder para manter o botão do menu funcionando.</p>
+          <button class="btn btn-primary full" type="button" data-go="home">Voltar para Home</button>
+        </div>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegação principal">
+        <button type="button" data-go="home"><span>⌂</span>Home</button>
+        <button type="button" data-go="pesquisa"><span>⌕</span>Pesquisa</button>
+        <button type="button" data-go="alertas"><span>▣</span>Meus Temas</button>
+        <button type="button" data-go="perfil"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
